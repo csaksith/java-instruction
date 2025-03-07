@@ -99,4 +99,15 @@ public class MyConsole {
 		}
 		return result;
 	}
+	
+	public static void printHeader(String header, String sep) {
+	    println(header);
+	    String separatorLine = sep.repeat(header.length());
+	    println(separatorLine);
+	}
+
+	public static void printHeader(String header) {
+	    printHeader(header, "="); // Calls the first method with a default separator of "="
+	}
+	
 }

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import util.MyConsole;
+
 public class TravelTimeCalculator {
 
 	public static void main(String[] args) {
@@ -18,13 +20,18 @@ public class TravelTimeCalculator {
 			mph = Integer.parseInt(sc.nextLine());
 			// calculate hours
 			// miles/mph = 
-			hours = miles/ mph;
-			System.out.println("Hours: "+hours);
-//			System.out.println("Estimated travel time");
-//			System.out.println("---------------------");
+			double totalHours = (double)miles/mph;
+			hours = (int)totalHours;
+			double min=totalHours-hours;
+			minutes=(int)(min*60);
+//			MyConsole.println("minutes decimal: "+min);
+			MyConsole.printHeader("Estimated travel time","-");
+			MyConsole.println("Hours: "+hours);
+			MyConsole.println("Minutes: "+minutes);
+			choice =MyConsole.promptString("Continue? (y/n): ");
 		}
 
-		System.out.println("Bye!~");
+		MyConsole.println("\nBye!~");
 	}
 
 }

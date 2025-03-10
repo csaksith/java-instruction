@@ -15,6 +15,11 @@ public class MyConsole {
 		System.out.println(msg);
 	}
 
+	 // Overloaded method to print a new line
+    public static void println() {
+        System.out.println(); // This prints a new line
+    }
+	
 	// method to prompt string
 	public static String promptString(String prompt) {
 		print(prompt);

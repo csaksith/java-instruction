@@ -1,5 +1,6 @@
 package util;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MyConsole {
@@ -114,5 +115,24 @@ public class MyConsole {
 	public static void printHeader(String header) {
 	    printHeader(header, "="); // Calls the first method with a default separator of "="
 	}
-	
+	public static String promptString(String prompt, List<String> validValues) {
+		String str = "";
+		boolean success = false;
+		while (!success) {
+			str = promptString(prompt);
+//			for (String s: validValues) {
+//				if (s.equalsIgnoreCase(str)) {
+//					success = true;
+//					break;
+//				}
+//			}
+			if (validValues.contains(str)) {
+				success = true;
+			}
+			if (!success) {
+				println("Invalid value. Try again.");
+			}
+		}
+		return str;
+	}
 }
